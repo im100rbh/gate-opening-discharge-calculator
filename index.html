@@ -58,8 +58,8 @@
   <body>
     <div align="center">
       <form name="gateopen">
-        <h3 id="name">Discharge of Gate opening calculator</h3>
-        <h3 class="subpo" id="firsubhead">&#187;For submereged position</h3>
+        <h3 id="name">Discharge through orifice spillway</h3>
+        <h3 class="subpo" id="firsubhead">&#187;For submereged condition</h3>
         <label for="areaofsubpos"
           >Area of submereged portion of the sluice(A)</label
         >
@@ -76,7 +76,7 @@
 
         <br />
         <label for="cofdis">Cofficient of Discharge(C)</label>
-        <input type="number" name="codis" value="0.74" id="cofdis" readonly />
+        <input type="number" name="codis"  id="cofdis"  />
 
         <br />
         <label for="disgate">Discharge of Gate opening(Q)</label>
@@ -93,7 +93,7 @@
 
         <br />
         <br />
-        <h3 class="subpo" id="secsubhead">&#187;For free flow position</h3>
+        <h3 class="subpo" id="secsubhead">&#187;For free flow condition</h3>
         <br />
         <label for="uph"
           >Heads up to the bottom of free flow portion top of
@@ -114,7 +114,7 @@
         <input type="number" name="wslice" id="ws" />&nbsp;
         <br />
         <label for="cofdis2">Cofficient of Discharge(C)</label>
-        <input type="number" name="codis2" value="0.78" id="cofdis2" readonly />
+        <input type="number" name="codis2"  id="cofdis2" />
         <br />
         <label for="disgate2">Discharge of Gate opening(Q)</label>
         <input
@@ -140,7 +140,7 @@
         gateopen.dgate2.value =
           0.67 *
           Math.sqrt(19.6) *
-          0.78 *
+          gateopen.codis2 *
           gateopen.wslice.value *
           [gateopen.uphead.value ** 1.5 - gateopen.downhead.value ** 1.5];
       }
